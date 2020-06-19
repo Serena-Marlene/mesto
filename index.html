@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="icon" href="./images/logo.svg">
+  <title>Mesto</title>
+</head>
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="Лого"> 
+    </header>
+    <main class="root">
+        <section class="profile">
+            <div class="profile__about">
+                <div class="profile__avatar"></div>
+                <div class="profile__info">
+                    <div class="profile__name-edit">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button class="profile__edit button"></button>
+                    </div>
+                    <p class="profile__job">Исследователь океана</p>
+                </div>
+            </div>
+            <button class="add-button button"></button>
+        </section>
+        <section class="places">
+            <div class="place">
+                <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево">
+                <div class="place__description">
+                    <h2 class="place__title">Карачаевск</h2>
+                    <button class="place__like button" title="Нравится"></button>
+                </div> 
+            </div>
+            <div class="place">
+                <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                <div class="place__description">
+                    <h2 class="place__title">Гора Эльбрус</h2>
+                    <button class="place__like button" title="Нравится"></button>
+                </div> 
+            </div>
+            <div class="place">
+                <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
+                <div class="place__description">
+                    <h2 class="place__title">Домбай</h2>
+                    <button class="place__like button" title="Нравится"></button>
+                </div> 
+            </div>
+            <div class="place">
+                <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                <div class="place__description">
+                    <h2 class="place__title">Гора Эльбрус</h2>
+                    <button class="place__like button" title="Нравится"></button>
+                </div> 
+            </div>
+            <div class="place">
+                <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
+                <div class="place__description">
+                    <h2 class="place__title">Домбай</h2>
+                    <button class="place__like button" title="Нравится"></button>
+                </div> 
+            </div>
+            <div class="place">
+                <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево-Черкесия">
+                <div class="place__description">
+                    <h2 class="place__title">Карачаево-Черкесия</h2>
+                    <button class="place__like button" title="Нравится"></button>
+                </div> 
+            </div>
+        </section>
+        <div class="popup">
+            <div class="popup__container">
+              <h3 class="popup__title">Редактировать профиль</h3>
+              <form novalidate class="popup__form" name="new-user-add">
+                <button type="reset" class="popup__close button"></button>
+                <input type="text" name="name-add" class="popup__input popup__name-input" placeholder="Имя" required>
+                <input type="text" name="job-add" class="popup__input popup__job-input" placeholder="О себе" required>
+                <button type="submit" class="popup__save button">Сохранить</button>
+              </form>
+            </div>
+          </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+<script src="./scripts/index.js"></script>
+</body>
+</html>
