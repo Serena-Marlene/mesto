@@ -1,16 +1,16 @@
-.popup__job_input {
+.popup__input_job {
     padding: 0;
   }
 
-input::placeholder {
+.popup__input_job::placeholder {
   font-family: Inter, Helvetica, sans-serif;
 }
-input::-webkit-input-placeholder {
+.popup__input_job::-webkit-input-placeholder {
   font-family: Inter, Helvetica, sans-serif;
 }
-input::-moz-placeholder {
+.popup__input_job::-moz-placeholder {
   font-family: Inter, Helvetica, sans-serif;
 }
-input::-ms-input-placeholder {
+.popup__input_job::-ms-input-placeholder {
   font-family: Inter, Helvetica, sans-serif;
 }
