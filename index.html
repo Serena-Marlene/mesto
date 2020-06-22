@@ -23,59 +23,61 @@
                     <p class="profile__job">Исследователь океана</p>
                 </div>
             </div>
-            <button class="add-button button"></button>
+            <button class="profile__add-button button"></button>
         </section>
         <section class="places">
-            <div class="place">
-                <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево">
-                <div class="place__description">
-                    <h2 class="place__title">Карачаевск</h2>
-                    <button class="place__like button" title="Нравится"></button>
-                </div> 
-            </div>
-            <div class="place">
-                <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                <div class="place__description">
-                    <h2 class="place__title">Гора Эльбрус</h2>
-                    <button class="place__like button" title="Нравится"></button>
-                </div> 
-            </div>
-            <div class="place">
-                <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
-                <div class="place__description">
-                    <h2 class="place__title">Домбай</h2>
-                    <button class="place__like button" title="Нравится"></button>
-                </div> 
-            </div>
-            <div class="place">
-                <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                <div class="place__description">
-                    <h2 class="place__title">Гора Эльбрус</h2>
-                    <button class="place__like button" title="Нравится"></button>
-                </div> 
-            </div>
-            <div class="place">
-                <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
-                <div class="place__description">
-                    <h2 class="place__title">Домбай</h2>
-                    <button class="place__like button" title="Нравится"></button>
-                </div> 
-            </div>
-            <div class="place">
-                <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево-Черкесия">
-                <div class="place__description">
-                    <h2 class="place__title">Карачаево-Черкесия</h2>
-                    <button class="place__like button" title="Нравится"></button>
-                </div> 
-            </div>
+            <ul class="places__list">
+                <li class="place">
+                    <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево">
+                    <div class="place__description">
+                        <h2 class="place__title">Карачаевск</h2>
+                        <button class="place__like button" title="Нравится"></button>
+                    </div> 
+                </li>
+                <li class="place">
+                    <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                    <div class="place__description">
+                        <h2 class="place__title">Гора Эльбрус</h2>
+                        <button class="place__like button" title="Нравится"></button>
+                    </div> 
+                </li>
+                <li class="place">
+                    <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
+                    <div class="place__description">
+                        <h2 class="place__title">Домбай</h2>
+                        <button class="place__like button" title="Нравится"></button>
+                    </div> 
+                </li>
+                <li class="place">
+                    <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                    <div class="place__description">
+                        <h2 class="place__title">Гора Эльбрус</h2>
+                        <button class="place__like button" title="Нравится"></button>
+                    </div> 
+                </li>
+                <li class="place">
+                    <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
+                    <div class="place__description">
+                        <h2 class="place__title">Домбай</h2>
+                        <button class="place__like button" title="Нравится"></button>
+                    </div> 
+                </li>
+                <li class="place">
+                    <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево-Черкесия">
+                    <div class="place__description">
+                        <h2 class="place__title">Карачаево-Черкесия</h2>
+                        <button class="place__like button" title="Нравится"></button>
+                    </div> 
+                </li>
+            </ul>
         </section>
         <div class="popup">
             <div class="popup__container">
               <h3 class="popup__title">Редактировать профиль</h3>
               <form novalidate class="popup__form" name="new-user-add">
                 <button type="reset" class="popup__close button"></button>
-                <input type="text" name="name-add" class="popup__input popup__name-input" placeholder="Имя" required>
-                <input type="text" name="job-add" class="popup__input popup__job-input" placeholder="О себе" required>
+                <input type="text" name="name-add" class="popup__input popup__name_input" placeholder="Имя" required>
+                <input type="text" name="job-add" class="popup__input popup__job_input" placeholder="О себе" required>
                 <button type="submit" class="popup__save button">Сохранить</button>
               </form>
             </div>

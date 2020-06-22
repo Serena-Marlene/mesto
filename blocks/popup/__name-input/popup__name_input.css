@@ -1,0 +1,16 @@
+.popup__name_input {
+    margin-top: 30px;
+  }
+
+input::placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
+input::-webkit-input-placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
+input::-moz-placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
+input::-ms-input-placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}

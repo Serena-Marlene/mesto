@@ -5,8 +5,8 @@ let formElement = document.querySelector('.popup__form');
 let nameProfile = document.querySelector('.profile__name');
 let jobProfile = document.querySelector('.profile__job');
 let saveButton = document.querySelector('.popup__save');
-let nameInput = document.querySelector('.popup__name-input');
-let jobInput = document.querySelector('.popup__job-input');
+let nameInput = document.querySelector('.popup__name_input');
+let jobInput = document.querySelector('.popup__job_input');
 
 
 // открывать и закрывать попап, помещать текст в открывшийся попап
