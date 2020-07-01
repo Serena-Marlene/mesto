@@ -44,14 +44,15 @@ const cardForm = document.querySelector('[name="new-card-add"]');
 const cardPopup = cardForm.closest('.popup');
 const cardNameInput = cardForm.querySelector('[name="card-name-add"]');
 const cardLinkInput = cardForm.querySelector('[name="card-image-add"]');
+const cardTemplate = document.querySelector('#place-template').content;
 
 // навесить/снять popup__opened
 function togglePopup(popup) {
   popup.classList.toggle('popup__opened');
 }
 // закрывалка для всех кнопок закрытия
-closeButtonList.forEach(function(i) {
-  i.addEventListener('click',function(evt) {
+closeButtonList.forEach(function(button) {
+  button.addEventListener('click',function(evt) {
     togglePopup(evt.target.closest('.popup'));
   })
 });
@@ -63,9 +64,6 @@ function editProfile() {
   togglePopup(editPopup);
 }
 
-// обработчик нажатия кнопки редактирования профиля
-editButton.addEventListener('click', editProfile);
-
 // заносим новые данные профиля, сохраняем, закрываем попап редактирования профиля
 function formSubmitHandler (evt) {
   evt.preventDefault();
@@ -74,27 +72,24 @@ function formSubmitHandler (evt) {
   togglePopup(editPopup);
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-formEdit.addEventListener('submit', formSubmitHandler);
-
-// создаем новую карточку из шаблона, заполняем данными, навешиваем обработчик, помещаем в начало
+// сборка карточки по шаблону и установка слушателей, возвращение элемента карточки(newCard)
 function addCard(title, image) {
-  const cardTemplate = document.querySelector('#place-template').content;
   const newCard = cardTemplate.cloneNode(true);
   newCard.querySelector('.place__title').textContent = title;
   newCard.querySelector('.place__image').src = image;
   newCard.querySelector('.place__image').alt = title;
-// добавляем обработчики, определенные ниже
+  newCard.querySelector('.place__image').addEventListener('click', function (evt) {
+    openImage(evt.target.alt, evt.target.src);
+  });
   addCardListeners(newCard);
-  
-  cardsContainer.prepend(newCard);
+  return newCard;
 }
 
-// обработка нажатие кнопки Добавления карточки
-addButton.addEventListener('click', () => {
-  togglePopup(cardPopup);
-});
+// добавляем в разметку карточку с указанными данными в контейнер.
+function renderCard(title, image) {
+  const newCard = addCard(title, image);
+  cardsContainer.prepend(newCard);
+}
 
 // удаляем карточку
 function deleteCard(evt) {
@@ -106,30 +101,43 @@ function toggleLikeCard(evt) {
   evt.target.classList.toggle('place__like_active');
 }
 
-// открываем попап с увеличенной картинкой, вставив туда данные открываемой картинки
-function openImage(evt) {
-  const currentCard = evt.target.closest('.place');
-  figureImage.src = evt.target.src;
-  figureCaption.textContent = currentCard.querySelector('.place__title').textContent;
-  togglePopup(figurePopup);
+// функция увеличения картинки
+function openImage(title, link) {
+  const popupImage = document.querySelector('.popup__increase')
+
+  popupImage.querySelector('.popup__image').src = link;
+  popupImage.querySelector('.popup__image').alt = title;
+  popupImage.querySelector('.popup__caption').textContent = title;
+
+  togglePopup(popupImage);
 }
+
+
+// добавляем изначальный массив карточек
+initialCards.forEach(item => renderCard(item.name, item.link));
 
 // Обработчики событий для карточек: удаление, лайк, увеличить фото
 function addCardListeners(card) {
   card.querySelector('.place__remove').addEventListener('click', deleteCard);
   card.querySelector('.place__like').addEventListener('click', toggleLikeCard);
-  card.querySelector('.place__image').addEventListener('click', openImage);
 }
+
+// обработчик нажатия кнопки редактирования профиля
+editButton.addEventListener('click', editProfile);
+
+// обработчик отправки формы редактирования профиля
+formEdit.addEventListener('submit', formSubmitHandler);
+
 // обработчик следит за событием “submit” добавления карточки, заносит данные, закрывает попап
 cardForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
-  addCard(cardNameInput.value, cardLinkInput.value);
+  renderCard(cardNameInput.value, cardLinkInput.value);
   cardNameInput.value = '';
   cardLinkInput.value = '';
   togglePopup(evt.target.closest('.popup'));
 });
 
-// добавляем изначальный массив карточек
-initialCards.forEach(item => addCard(item.name, item.link));
-
-
+// обработчик нажатия кнопки Добавления карточки
+addButton.addEventListener('click', () => {
+  togglePopup(cardPopup);
+});
