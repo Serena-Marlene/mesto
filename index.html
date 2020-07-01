@@ -25,64 +25,51 @@
             </div>
             <button class="profile__add-button button"></button>
         </section>
-        <section class="places">
-            <ul class="places__list">
-                <li class="place">
-                    <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево">
-                    <div class="place__description">
-                        <h2 class="place__title">Карачаевск</h2>
-                        <button class="place__like button" title="Нравится"></button>
-                    </div> 
-                </li>
-                <li class="place">
-                    <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                    <div class="place__description">
-                        <h2 class="place__title">Гора Эльбрус</h2>
-                        <button class="place__like button" title="Нравится"></button>
-                    </div> 
-                </li>
-                <li class="place">
-                    <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
-                    <div class="place__description">
-                        <h2 class="place__title">Домбай</h2>
-                        <button class="place__like button" title="Нравится"></button>
-                    </div> 
-                </li>
-                <li class="place">
-                    <img class="place__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                    <div class="place__description">
-                        <h2 class="place__title">Гора Эльбрус</h2>
-                        <button class="place__like button" title="Нравится"></button>
-                    </div> 
-                </li>
-                <li class="place">
-                    <img class="place__image" src="./images/dombai.jpg" alt="Домбай">
-                    <div class="place__description">
-                        <h2 class="place__title">Домбай</h2>
-                        <button class="place__like button" title="Нравится"></button>
-                    </div> 
-                </li>
-                <li class="place">
-                    <img class="place__image" src="./images/karachaevo.jpg" alt="Карачаево-Черкесия">
-                    <div class="place__description">
-                        <h2 class="place__title">Карачаево-Черкесия</h2>
-                        <button class="place__like button" title="Нравится"></button>
-                    </div> 
-                </li>
+        <section>
+            <ul class="places">
+        
             </ul>
         </section>
-        <div class="popup">
+        <div class="popup__edit popup">
             <div class="popup__container">
               <h3 class="popup__title">Редактировать профиль</h3>
-              <form novalidate class="popup__form" name="new-user-add">
-                <button type="reset" class="popup__close button"></button>
+              <form novalidate class="popup__form-edit" name="new-user-add">
+                <button type="reset" class="popup__close popup__close-form button"></button>
                 <input type="text" name="name-add" class="popup__input popup__input_name" placeholder="Имя" required>
                 <input type="text" name="job-add" class="popup__input popup__input_job" placeholder="О себе" required>
                 <button type="submit" class="popup__save button">Сохранить</button>
               </form>
             </div>
-          </div>
+        </div>
+        <div class="popup popup__add">
+            <div class="popup__container">
+              <h3 class="popup__title">Новое место</h3>
+              <form novalidate class="popup__form-add" name="new-card-add">
+                <button type="reset" class="popup__close popup__close-form button"></button>
+                <input type="text" name="card-name-add" class="popup__input popup__input_place-name" placeholder="Название" required>
+                <input type="text" name="card-image-add" class="popup__input popup__input_place-image" placeholder="Ссылка на картинку" required>
+                <button type="submit" class="popup__save button">Создать</button>
+              </form>
+            </div>
+        </div>
+        <div class="popup popup__increase">
+            <figure class="popup__figure">
+                <button type="reset" class="popup__close popup__close-fig button"></button>
+                <img src="#" alt="" class="popup__image">
+                <figcaption class="popup__caption"></figcaption>
+            </figure>  
+        </div>
     </main>
+    <template id="place-template">
+        <li class="place">
+          <img src="" alt="" class="place__image">
+          <button type="reset" class="place__remove"></button>
+          <div class="place__description">
+            <p class="place__title"></p>
+            <button class="place__like button"></button>
+          </div>
+        </li>
+      </template>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>

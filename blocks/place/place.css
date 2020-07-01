@@ -1,7 +1,9 @@
 @import url(./__description/place__description.css);
 @import url(./__image/place__image.css);
 @import url(./__like/place__like.css);
+@import url(./__like/_active/place__like_active.css);
 @import url(./__title/place__title.css);
+@import url(./__remove/place__remove.css);
 
 .place {
     width: 282px;
@@ -9,4 +11,5 @@
     background-color: #fff;
     overflow: hidden;
     border-radius: 10px;
+    position: relative;
   }

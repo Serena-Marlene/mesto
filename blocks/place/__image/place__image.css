@@ -2,5 +2,11 @@
     object-fit: cover;
     width: 282px;
     height: 282px;
-    margin: 0; 
+    margin: 0;
+    transition: opacity linear 0.5s; 
+  }
+
+  .place__image:hover {
+    cursor: pointer;
+    opacity: 0.6;
   }

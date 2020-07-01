@@ -1,5 +1,7 @@
 @import url(./_name/popup__input_name.css);
 @import url(./_job/popup__input_job.css);
+@import url(./_place-name/popup__input_place-name.css);
+@import url(./_place-image/popup__input_place-image.css);
 
 .popup__input {
     width: 100%;

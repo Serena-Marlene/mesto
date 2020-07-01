@@ -1,0 +1,12 @@
+.popup__close-form {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+}
+
+@media screen and (max-width: 550px) {
+    .popup__close-form {
+      top: -34px;
+      right: 0; 
+    }
+}

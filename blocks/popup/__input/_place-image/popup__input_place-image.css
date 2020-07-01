@@ -1,0 +1,16 @@
+.popup__input_place-image {
+    padding: 0;
+  }
+
+.popup__input_place-image::placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
+.popup__input_place-image::-webkit-input-placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
+.popup__input_place-image::-moz-placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
+.popup__input_place-image::-ms-input-placeholder {
+  font-family: Inter, Helvetica, sans-serif;
+}
