@@ -217,9 +217,8 @@ function hasInvalidInput (inputList) {
 
 function setEventListeners (formElement) {
   const buttonElement = formElement.querySelector('.popup__save');
-  const inputList = formElement.querySelectorAll('.popup__input');
+  let inputList = formElement.querySelectorAll('.popup__input');
   toggleButtonState (inputList, buttonElement);
-
   // обходим элементы полученной коллекции
   inputList.forEach((formInput) => {
     // каждому полю добавим обработчик события input
@@ -230,6 +229,7 @@ function setEventListeners (formElement) {
     });
   });
 };
+
 
 
 // делаем кнопку активной/неактивной
