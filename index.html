@@ -33,10 +33,16 @@
         <div class="popup__edit popup">
             <div class="popup__container">
               <h3 class="popup__title">Редактировать профиль</h3>
-              <form novalidate class="popup__form-edit" name="new-user-add">
+              <form novalidate class="popup__form popup__form-edit" name="new-user-add">
                 <button type="reset" class="popup__close popup__close-form button"></button>
-                <input type="text" name="name-add" class="popup__input popup__input_name" placeholder="Имя" required>
-                <input type="text" name="job-add" class="popup__input popup__input_job" placeholder="О себе" required>
+                <label for="profile-name" class="popup__field">
+                  <input id="profile-name" type="text" name="name-add" class="popup__input popup__input_name" placeholder="Имя" minlength="2" maxlength="40" required>
+                  <span id="profile-name-error" class="popup__input-error"></span>
+                </label>
+                <label for="profile-job" class="popup__field">
+                  <input id="profile-job" type="text" name="job-add" class="popup__input popup__input_job" placeholder="О себе" minlength="2" maxlength="200" required>
+                  <span id="profile-job-error" class="popup__input-error"></span>
+                </label>
                 <button type="submit" class="popup__save button">Сохранить</button>
               </form>
             </div>
@@ -44,10 +50,16 @@
         <div class="popup popup__add">
             <div class="popup__container">
               <h3 class="popup__title">Новое место</h3>
-              <form novalidate class="popup__form-add" name="new-card-add">
+              <form novalidate class="popup__form popup__form-add" name="new-card-add">
                 <button type="reset" class="popup__close popup__close-form button"></button>
-                <input type="text" name="card-name-add" class="popup__input popup__input_place-name" placeholder="Название" required>
-                <input type="text" name="card-image-add" class="popup__input popup__input_place-image" placeholder="Ссылка на картинку" required>
+                <label for="addcard-name" class="popup__field">
+                  <input id="addcard-name" type="text" name="card-name-add" class="popup__input popup__input_place-name" placeholder="Название" minlength="1" maxlength="30" required>
+                  <span id="addcard-name-error" class="popup__input-error"></span>
+                </label>
+                <label for="addcard-link" class="popup__field">
+                  <input id="addcard-link" type="url" name="card-image-add" class="popup__input popup__input_place-image" placeholder="Ссылка на картинку" required>
+                  <span id="addcard-link-error" class="popup__input-error"></span>
+                </label>
                 <button type="submit" class="popup__save button">Создать</button>
               </form>
             </div>
@@ -74,5 +86,6 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 <script src="./scripts/index.js"></script>
+<!-- <script src="./scripts/validate.js"></script> -->
 </body>
 </html>

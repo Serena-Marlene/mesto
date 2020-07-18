@@ -9,8 +9,21 @@
     color: #FFFFFF;
     width: 358px;
     height: 50.15px; 
-    margin-top: 50px;
+    margin-top: 30px;
   }
+
+  .popup__save:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+  .popup__save:disabled {
+    opacity: 0.2;
+    background: none;
+    border: 1px solid #000000;
+    color: black;
+    pointer-events: none;
+}
 
   @media screen and (max-width: 550px) {
     .popup__save {
