@@ -217,7 +217,7 @@ function hasInvalidInput (inputList) {
 
 function setEventListeners (formElement) {
   const buttonElement = formElement.querySelector('.popup__save');
-  let inputList = formElement.querySelectorAll('.popup__input');
+  let inputList = Array.from(formElement.querySelectorAll('.popup__input'));
   toggleButtonState (inputList, buttonElement);
   // обходим элементы полученной коллекции
   inputList.forEach((formInput) => {
