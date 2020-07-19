@@ -8,6 +8,7 @@
   cursor: pointer;
   border: none;
   outline: none;
+  transition: opacity linear 0.3s;   
 }
 
 .place__remove:hover {

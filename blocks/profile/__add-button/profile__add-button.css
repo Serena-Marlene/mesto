@@ -9,7 +9,12 @@
     border: 2px solid #FFFFFF;
     outline: none;
     border-radius: 2px;
-    transition: border linear 0.3s;  
+    transition: opacity linear 0.5s; 
+}
+
+.profile__add-button:hover {
+    cursor: pointer;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 550px) {

@@ -18,12 +18,12 @@
                 <div class="profile__info">
                     <div class="profile__name-edit">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button class="profile__edit button"></button>
+                        <button class="profile__edit"></button>
                     </div>
                     <p class="profile__job">Исследователь океана</p>
                 </div>
             </div>
-            <button class="profile__add-button button"></button>
+            <button class="profile__add-button"></button>
         </section>
         <section>
             <ul class="places">
@@ -35,7 +35,7 @@
             <div class="popup__container">
               <h3 class="popup__title">Редактировать профиль</h3>
               <form novalidate class="popup__form popup__form-edit" name="new-user-add">
-                <button type="reset" class="popup__close popup__close-form button"></button>
+                <button type="reset" class="popup__close popup__close-form"></button>
                 <label for="profile-name" class="popup__field">
                   <input id="profile-name" type="text" name="name-add" class="popup__input popup__input_name" placeholder="Имя" minlength="2" maxlength="40" required>
                   <span id="profile-name-error" class="popup__input-error"></span>
@@ -44,7 +44,7 @@
                   <input id="profile-job" type="text" name="job-add" class="popup__input popup__input_job" placeholder="О себе" minlength="2" maxlength="200" required>
                   <span id="profile-job-error" class="popup__input-error"></span>
                 </label>
-                <button type="submit" class="popup__save button">Сохранить</button>
+                <button type="submit" class="popup__save">Сохранить</button>
               </form>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="popup__container">
               <h3 class="popup__title">Новое место</h3>
               <form novalidate class="popup__form popup__form-add" name="new-card-add">
-                <button type="reset" class="popup__close popup__close-form button"></button>
+                <button type="reset" class="popup__close popup__close-form"></button>
                 <label for="addcard-name" class="popup__field">
                   <input id="addcard-name" type="text" name="card-name-add" class="popup__input popup__input_place-name" placeholder="Название" minlength="1" maxlength="30" required>
                   <span id="addcard-name-error" class="popup__input-error"></span>
@@ -61,13 +61,13 @@
                   <input id="addcard-link" type="url" name="card-image-add" class="popup__input popup__input_place-image" placeholder="Ссылка на картинку" required>
                   <span id="addcard-link-error" class="popup__input-error"></span>
                 </label>
-                <button type="submit" class="popup__save button">Создать</button>
+                <button type="submit" class="popup__save">Создать</button>
               </form>
             </div>
         </div>
         <div class="popup__general popup__increase">
             <figure class="popup__figure">
-                <button type="reset" class="popup__close popup__close-fig button"></button>
+                <button type="reset" class="popup__close popup__close-fig"></button>
                 <img src="#" alt="" class="popup__image">
                 <figcaption class="popup__caption"></figcaption>
             </figure>  
@@ -81,7 +81,7 @@
           <button type="reset" class="place__remove"></button>
           <div class="place__description">
             <p class="place__title"></p>
-            <button class="place__like button"></button>
+            <button class="place__like"></button>
           </div>
         </li>
       </template>
@@ -92,3 +92,4 @@
 <script src="./scripts/validate.js"></script>
 </body>
 </html>
+
