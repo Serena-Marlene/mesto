@@ -49,6 +49,7 @@ const cardTemplate = document.querySelector('#place-template').content;
 // навесить/снять popup__opened
 function togglePopup(popup) {
   popup.classList.toggle('popup__opened');
+  window.addEventListener('keydown', closePopupOnEscape);
 }
 // закрывалка для всех кнопок закрытия
 closeButtonList.forEach(function(button) {
@@ -68,13 +69,14 @@ document.querySelectorAll('.popup__general').forEach(function(popup) {
 });
 
 
-// закрывать попап нажатием на Escape
-window.addEventListener('keydown', function(evt) {
+function closePopupOnEscape(evt) {
   const popupOpened = document.querySelector('.popup__opened')
   if (evt.key === "Escape" && popupOpened) {
     togglePopup(popupOpened);
   }
-});
+  window.removeEventListener('keydown', closePopupOnEscape);
+}
+
 
 // открыть попап редактирования профиля с сохранением внесенных данных
 function editProfile() {
