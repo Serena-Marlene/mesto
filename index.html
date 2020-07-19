@@ -30,7 +30,8 @@
         
             </ul>
         </section>
-        <div class="popup__edit popup">
+        <section class="popup">
+          <div class="popup__general popup__edit">
             <div class="popup__container">
               <h3 class="popup__title">Редактировать профиль</h3>
               <form novalidate class="popup__form popup__form-edit" name="new-user-add">
@@ -47,7 +48,7 @@
               </form>
             </div>
         </div>
-        <div class="popup popup__add">
+        <div class="popup__general popup__add">
             <div class="popup__container">
               <h3 class="popup__title">Новое место</h3>
               <form novalidate class="popup__form popup__form-add" name="new-card-add">
@@ -64,13 +65,15 @@
               </form>
             </div>
         </div>
-        <div class="popup popup__increase">
+        <div class="popup__general popup__increase">
             <figure class="popup__figure">
                 <button type="reset" class="popup__close popup__close-fig button"></button>
                 <img src="#" alt="" class="popup__image">
                 <figcaption class="popup__caption"></figcaption>
             </figure>  
         </div>
+        </section>
+
     </main>
     <template id="place-template">
         <li class="place">

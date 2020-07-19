@@ -35,13 +35,13 @@ const formEdit = document.querySelector('[name="new-user-add"]');
 const nameInput = formEdit.querySelector('[name="name-add"]');
 const jobInput = formEdit.querySelector('[name="job-add"]');
 const addButton = document.querySelector('.profile__add-button');
-const editPopup = formEdit.closest('.popup');
+const editPopup = formEdit.closest('.popup__general');
 const figurePopup = document.querySelector('.popup__increase');
 const figureCaption = figurePopup.querySelector('.popup__caption');
 const figureImage = figurePopup.querySelector('.popup__image');
 const cardsContainer = document.querySelector('.places');
 const cardForm = document.querySelector('[name="new-card-add"]');
-const cardPopup = cardForm.closest('.popup');
+const cardPopup = cardForm.closest('.popup__general');
 const cardNameInput = cardForm.querySelector('[name="card-name-add"]');
 const cardLinkInput = cardForm.querySelector('[name="card-image-add"]');
 const cardTemplate = document.querySelector('#place-template').content;
@@ -53,23 +53,23 @@ function togglePopup(popup) {
 // закрывалка для всех кнопок закрытия
 closeButtonList.forEach(function(button) {
   button.addEventListener('click',function(evt) {
-    togglePopup(evt.target.closest('.popup'));
+    togglePopup(evt.target.closest('.popup__general'));
   })
 });
 
 
 // закрывать попап нажатием на затемненную область
-document.querySelectorAll('.popup').forEach(function(popup) {
+document.querySelectorAll('.popup__general').forEach(function(popup) {
   popup.addEventListener('mousedown',function(evt) {
-    if (evt.target.classList.contains('popup')) {
-      togglePopup(evt.target.closest('.popup'));
+    if (evt.target.classList.contains('popup__general')) {
+      togglePopup(evt.target.closest('.popup__general'));
     }
   })
 });
 
 
 // закрывать попап нажатием на Escape
-document.addEventListener('keydown', function(evt) {
+window.addEventListener('keydown', function(evt) {
   const popupOpened = document.querySelector('.popup__opened')
   if (evt.key === "Escape" && popupOpened) {
     togglePopup(popupOpened);
@@ -81,6 +81,7 @@ function editProfile() {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
   togglePopup(editPopup);
+  saveButton.setAttribute('disabled', true);
 }
 
 // заносим новые данные профиля, сохраняем, закрываем попап редактирования профиля
@@ -94,15 +95,18 @@ function formSubmitHandler (evt) {
 // сборка карточки по шаблону и установка слушателей, возвращение элемента карточки(newCard)
 function addCard(title, image) {
   const newCard = cardTemplate.cloneNode(true);
+  const placeImage = newCard.querySelector('.place__image');
+  
   newCard.querySelector('.place__title').textContent = title;
-  newCard.querySelector('.place__image').src = image;
-  newCard.querySelector('.place__image').alt = title;
-  newCard.querySelector('.place__image').addEventListener('click', function (evt) {
+  placeImage.src = image;
+  placeImage.alt = title;
+  placeImage.addEventListener('click', function (evt) {
     openImage(evt.target.alt, evt.target.src);
   });
   addCardListeners(newCard);
   return newCard;
 }
+
 
 // добавляем в разметку карточку с указанными данными в контейнер.
 function renderCard(title, image) {
@@ -122,10 +126,11 @@ function toggleLikeCard(evt) {
 
 // функция увеличения картинки
 function openImage(title, link) {
-  const popupImage = document.querySelector('.popup__increase')
+  const popupImage = document.querySelector('.popup__increase');
+  const cardImage = popupImage.querySelector('.popup__image');
 
-  popupImage.querySelector('.popup__image').src = link;
-  popupImage.querySelector('.popup__image').alt = title;
+  cardImage.src = link;
+  cardImage.alt = title;
   popupImage.querySelector('.popup__caption').textContent = title;
 
   togglePopup(popupImage);
@@ -150,14 +155,16 @@ formEdit.addEventListener('submit', formSubmitHandler);
 // обработчик следит за событием “submit” добавления карточки, заносит данные, закрывает попап
 cardForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
+  cardForm.querySelector('.popup__save').disabled = true;
   renderCard(cardNameInput.value, cardLinkInput.value);
   cardNameInput.value = '';
   cardLinkInput.value = '';
-  togglePopup(evt.target.closest('.popup'));
+  togglePopup(evt.target.closest('.popup__general'));
 });
 
 // обработчик нажатия кнопки Добавления карточки
 addButton.addEventListener('click', () => {
   togglePopup(cardPopup);
+  
 });
 
